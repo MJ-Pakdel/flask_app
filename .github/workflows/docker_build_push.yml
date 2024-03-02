@@ -31,8 +31,8 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: flask_deployment-prod-ecr:latest
+          IMAGE_TAG: flask-deployment-prod-ecr:latest
         run: |
           docker build -t flask_app:v0 .
-          docker tag flask_app:v0 $ECR_REGISTRY/flask_deployment-prod-ecr:latest
-          docker push $ECR_REGISTRY/flask_deployment-prod-ecr:latest
+          docker tag flask_app:v0 $ECR_REGISTRY/flask-deployment-prod-ecr:latest
+          docker push $ECR_REGISTRY/flask-deployment-prod-ecr:latest
